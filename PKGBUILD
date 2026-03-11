@@ -3,21 +3,23 @@
 pkgname=kde-display-profiles
 pkgver=1.0.0
 pkgrel=1
-pkgdesc="Display profile manager that uses kscreen-doctor to save and load display profiles on KDE Plasma"
+pkgdesc="GUI to save and load display profiles using kscreen-doctor"
 arch=('any')
-url="https://github.com/Dawsani/KDE-Display-Profiles"
+url="https://github.com/Dawsani/kde-display-profiles"
 license=('MIT')
-depends=('python' 'pyside6' 'libkscreen')
+depends=('python' 'pyside6' 'kscreen')
 makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('e161775a605ee74426645b35d686ceb29ac2f700f2833efd5a98602e3d540089')
 
 build() {
-  # We are already in $srcdir, no need to cd
+  cd "$pkgname-$pkgver"
   python -m build --wheel --no-isolation
 }
 
 package() {
+  cd "$pkgname-$pkgver"
+
   python -m installer --destdir="$pkgdir" dist/*.whl
 
   # Install desktop file
