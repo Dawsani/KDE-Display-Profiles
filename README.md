@@ -1,5 +1,7 @@
 # What is KDE Display Profiles?
 
-A simple tool that can save and load display profiles using kscreen-doctor to save your displays resolution, refresh rate,
-positional layout, scaling, rotation, enabled state and cloning state
+A GUI to save and load display profile configurations on Plasma KDE on Wayland using kscreen-doctor.
 
+I personally copy the load profile command via the GUI and use it to make a global shortcut to load my display profiles.
+
+![GUI Image](kde-display-profiles.png)
