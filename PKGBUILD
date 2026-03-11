@@ -9,17 +9,8 @@ url="https://github.com/Dawsani/KDE-Display-Profiles"
 license=('MIT')
 depends=('python' 'pyside6' 'libkscreen')
 makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
-# Point to local files for testing
-source=("pyproject.toml"
-        "kde_display_profiles.py"
-        "kde-display-profiles.desktop"
-        "LICENSE"
-        "README.md")
-sha256sums=('SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=('SKIP')
 
 build() {
   # We are already in $srcdir, no need to cd
