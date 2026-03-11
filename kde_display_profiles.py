@@ -209,6 +209,7 @@ class DisplayProfileManagerGUI(QMainWindow):
         super().__init__()
         self.setWindowTitle("KDE Display Profile Manager")
         self.setMinimumSize(420, 300)
+        self.setWindowIcon(QIcon.fromTheme("preferences-desktop-display"))
         
         # Ensure default directory exists
         DEFAULT_PROFILE_DIR.mkdir(parents=True, exist_ok=True)

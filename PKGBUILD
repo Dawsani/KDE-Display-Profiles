@@ -13,11 +13,9 @@ makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel
 source=("pyproject.toml"
         "kde_display_profiles.py"
         "kde-display-profiles.desktop"
-        "icon.png"
         "LICENSE"
         "README.md")
 sha256sums=('SKIP'
-            'SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
@@ -33,9 +31,6 @@ package() {
 
   # Install desktop file
   install -Dm644 "$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
-
-  # Install icon
-  install -Dm644 icon.png "$pkgdir/usr/share/icons/hicolor/128x128/apps/$pkgname.png"
 
   # Install license
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
